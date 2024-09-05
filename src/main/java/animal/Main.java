@@ -62,7 +62,7 @@ public class Main {
                         animals.add(animal);
                         System.out.println(animal.say());
                         break;
-
+//
                     }
                 case LIST:
                     if (animals.size() == 0) {
