@@ -1,0 +1,20 @@
+
+z	java:S135"YReduce the total number of break and continue statements in this loop to use at most one.(˜ïˆÿÿÿÿÿ8ËÑ£Œœ2
+o
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(Çµí‘8ĞÑ£Œœ2
+8
+java:S3626F"Remove this redundant jump.(ÉŠ©ƒ8ÑÑ£Œœ2
+X
+java:S1481"6Remove this unused "chooseTypeAnimals" local variable.(ŠÒÔôùÿÿÿÿ8ÒÑ£Œœ2
+L	java:S106"+Replace this use of System.out by a logger.(·à£Õşÿÿÿÿ8ÓÑ£Œœ2
+L	java:S106#"+Replace this use of System.out by a logger.(ƒø°üÿÿÿÿ8ÖÑ£Œœ2
+G	java:S106("+Replace this use of System.out by a logger.(—ÿ´8ÖÑ£Œœ2
+G	java:S106-"+Replace this use of System.out by a logger.(êÅÒÍ8×Ñ£Œœ2
+G	java:S1061"+Replace this use of System.out by a logger.(å”ª8×Ñ£Œœ2
+G	java:S1064"+Replace this use of System.out by a logger.(‚¶Ğ®8×Ñ£Œœ2
+L	java:S1067"+Replace this use of System.out by a logger.(”ë¾ªıÿÿÿÿ8×Ñ£Œœ2
+G	java:S106:"+Replace this use of System.out by a logger.(œíàï8ØÑ£Œœ2
+G	java:S106?"+Replace this use of System.out by a logger.(ÑÀ¯Í8ØÑ£Œœ2
+G	java:S106E"+Replace this use of System.out by a logger.(òÎ ¬8ØÑ£Œœ2
+L	java:S106I"+Replace this use of System.out by a logger.(âË¶ÿÿÿÿÿ8ÙÑ£Œœ2
+L	java:S106O"+Replace this use of System.out by a logger.(»¿‡Ñıÿÿÿÿ8ÙÑ£Œœ2
