@@ -25,3 +25,6 @@ W
 'src/main/java/utils/ValidationLine.java,f\e\febac042be9d5bf8337f5d840995b72eb676c491
 Y
 )src/main/java/utils/ValidationNumber.java,e\8\e8a51fd7901930c831599d5ee77040c1b68ac022
+:
+
+.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
