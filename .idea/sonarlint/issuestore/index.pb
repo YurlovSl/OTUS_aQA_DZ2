@@ -1,10 +1,6 @@
 
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
-S
-#src/main/java/org/example/Main.java,0\b\0ba1b9c7a4878802f938e331cc2d8a042087ec6b
-N
-src/main/java/animal/Main.java,c\c\cc0d0b3b83c6cec70da77fce16d233a03a490af9
 P
  src/main/java/animal/Animal.java,2\4\243c10050f3e6466e0a3c0424533ce413acbab3a
 M
@@ -28,3 +24,5 @@ Y
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
+G
+src/main/java/Main.java,e\4\e44a8606ce010ad9b89aafdfcee2ab49afbf6d10

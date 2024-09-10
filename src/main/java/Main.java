@@ -1,34 +1,29 @@
-package animal;
-
+import animal.Animal;
 import data.ChooseActions;
 import data.ChooseTypeAnimals;
 import fabrika.FabrikaForAnimals;
 import utils.ValidationLine;
 import utils.ValidationNumber;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
         ArrayList<Animal> animals = new ArrayList<>();
-        String line = null;
-        String name = null;
-        int age;
-        int weight;
-        String color = null;
+        ArrayList<String> animals2 = new ArrayList<>();
         ChooseActions chooseActions;
         ChooseTypeAnimals chooseTypeAnimals;
-        ValidationNumber  validationNumber = new ValidationNumber();
+        ValidationNumber validationNumber = new ValidationNumber();
         ValidationLine validationLine = new ValidationLine();
-
-
 
         while (true) {
             System.out.println("Введите команду add/list/exit");
             Scanner scanner = new Scanner(System.in);
-            line = scanner.nextLine().toUpperCase().trim();
+            String line = scanner.nextLine().toUpperCase().trim();
             try {
                 chooseActions = ChooseActions.valueOf(line);
             } catch (Exception exception) {
@@ -37,7 +32,15 @@ public class Main {
             }
             switch (chooseActions) {
                 case ADD:
-                    System.out.println("Введите название животного");
+                    int i = 0;
+
+                    for(ChooseTypeAnimals chooseTypeAnimals1: ChooseTypeAnimals.values()) {
+                       // myArray[i] = chooseTypeAnimals1.name().toLowerCase();
+                        animals2.add(i,chooseTypeAnimals1.name().toLowerCase());
+                        i++;
+                    }
+                  //  System.out.println("Введите название животного");
+                    System.out.println("Введите название животного: " + String.join("/", animals2));
                     String typeAnimal = scanner.nextLine().toUpperCase().trim();
 
                     if (!typeAnimal.equals("CAT") && !typeAnimal.equals("DOG") && !typeAnimal.equals("DUCK")) {
@@ -47,18 +50,18 @@ public class Main {
 
                     } else {
                         System.out.println("Введите имя");
-                        name = validationLine.validateLine(line);
+                        String name = validationLine.validateLine(line);
 
                         System.out.println("Введите возраст");
-                        age =validationNumber.validateNumber(line);
+                        int age = validationNumber.validateNumber(line);
 
                         System.out.println("Введите вес");
-                        weight = validationNumber.validateNumber(line);
+                        int weight = validationNumber.validateNumber(line);
 
                         System.out.println("Введите цвет");
-                        color = validationLine.validateLine(line);
+                        String color = validationLine.validateLine(line);
 
-                        Animal animal = new FabrikaForAnimals(name,age,weight,color).createAnimal(ChooseTypeAnimals.valueOf(typeAnimal) );
+                        Animal animal = new FabrikaForAnimals(name, age, weight, color).createAnimal(ChooseTypeAnimals.valueOf(typeAnimal));
                         animals.add(animal);
                         System.out.println(animal.say());
                         break;
