@@ -13,6 +13,6 @@ public class Duck extends Animal implements Flying {
 
     @Override
     public String say() {
-        return  ("Кря");
+        return ("Кря");
     }
 }

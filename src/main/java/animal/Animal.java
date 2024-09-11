@@ -40,22 +40,25 @@ public abstract class Animal {
         this.color = color;
     }
 
-    public String say(){
+    public String say() {
         return ("Я говорю");
     }
-    public void go(){
+
+    public void go() {
         System.out.println("Я иду");
     }
-    public void drink(){
+
+    public void drink() {
         System.out.println("Я пью");
     }
-    public void eat(){
+
+    public void eat() {
         System.out.println("Я ем");
     }
 
     @Override
     public String toString() {
-        String s = "Привет! меня зовут " + name + ", мне " + age + " " + countAge(getAge()) + " , я вешу - " + weight + " кг, мой цвет - " + color;
+        String s = "Привет! меня зовут " + name + ", мне " + age + " " + countAge(getAge()) + ", я вешу - " + weight + " кг, мой цвет - " + color;
         return s;
     }
 
@@ -66,7 +69,8 @@ public abstract class Animal {
         this.color = color;
 
     }
-    public String countAge (int age){
+
+    public String countAge(int age) {
 
         int count = age % 100;
         if (count >= 5 && count <= 20) {

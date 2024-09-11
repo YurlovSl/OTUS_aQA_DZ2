@@ -6,7 +6,7 @@ public class ValidationNumber {
     Scanner scanner = new Scanner(System.in);
 
     public int validateNumber(String line){
-        while (!scanner.hasNext("[0-9]*$")){
+        while (!scanner.hasNext("\\d*$")){
             System.out.println("Допускается ввод только цифр, повторите попытку");
             scanner.next();
         }
