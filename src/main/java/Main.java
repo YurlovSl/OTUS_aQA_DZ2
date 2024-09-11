@@ -14,7 +14,7 @@ public class Main {
     public static void main(String[] args) {
 
         ArrayList<Animal> animals = new ArrayList<>();
-        ArrayList<String> animals2 = new ArrayList<>();
+       // ArrayList<String> animalsForEnum = new ArrayList<>();
         ChooseActions chooseActions;
         ChooseTypeAnimals chooseTypeAnimals;
         ValidationNumber validationNumber = new ValidationNumber();
@@ -32,15 +32,16 @@ public class Main {
             }
             switch (chooseActions) {
                 case ADD:
-                    int i = 0;
-
+                    ArrayList<String> animalsForEnum = new ArrayList<>();
                     for(ChooseTypeAnimals chooseTypeAnimals1: ChooseTypeAnimals.values()) {
+                        int i = 0;
                        // myArray[i] = chooseTypeAnimals1.name().toLowerCase();
-                        animals2.add(i,chooseTypeAnimals1.name().toLowerCase());
+                        //animalsForEnum.add(i,chooseTypeAnimals1.name().toUpperCase());
+                        animalsForEnum.add(chooseTypeAnimals1.name().toUpperCase());
                         i++;
                     }
                   //  System.out.println("Введите название животного");
-                    System.out.println("Введите название животного: " + String.join("/", animals2));
+                    System.out.println("Введите название животного: " + String.join("/", animalsForEnum));
                     String typeAnimal = scanner.nextLine().toUpperCase().trim();
 
                     if (!typeAnimal.equals("CAT") && !typeAnimal.equals("DOG") && !typeAnimal.equals("DUCK")) {

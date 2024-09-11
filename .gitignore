@@ -3,9 +3,10 @@ target
 
 
 ### IntelliJ IDEA ###
-.idea
+*.idea
 *.iml
 out
+.sonarlint
 
 
 
