@@ -27,7 +27,7 @@ public class Main {
             try {
                 chooseActions = ChooseActions.valueOf(line);
             } catch (Exception exception) {
-                System.out.println("Такой команды нет, повторите попытку еще раз \n" + exception.fillInStackTrace());
+                System.out.println("Такой команды нет, повторите попытку еще раз");
                 continue;
             }
             switch (chooseActions) {
@@ -36,29 +36,31 @@ public class Main {
                     for (ChooseTypeAnimals chooseTypeAnimals1 : ChooseTypeAnimals.values()) {
                         animalsForEnum.add(chooseTypeAnimals1.name().toUpperCase());
                     }
-                    System.out.println("Введите название животного: " + String.join("/", animalsForEnum));          // Вывод животных через Enum
-                    String typeAnimal = scanner.nextLine().toUpperCase().trim();
+                    boolean type = false;
+                    while (!type) {
+                        System.out.println("Введите название животного: " + String.join("/", animalsForEnum));          // Вывод животных через Enum
+                        String typeAnimal = scanner.nextLine().toUpperCase().trim();
+                        
+                        if (!animalsForEnum.contains(typeAnimal)) {                                                             // Сравнение строки с элементами массива, полученных из Enum
+                            System.out.println("Такого животного нет, повторите попытку еще раз");
+                        } else {
+                            System.out.println("Введите имя");
+                            String name = validationLine.validateLine(line);
 
-                    if (!animalsForEnum.contains(typeAnimal)) {                                                             // Сравнение строки с элементами массива, полученных из Enum
-                        System.out.println("Такого животного нет, повторите попытку еще раз");
-                        break;
-                    } else {
-                        System.out.println("Введите имя");
-                        String name = validationLine.validateLine(line);
+                            System.out.println("Введите возраст");
+                            int age = validationNumber.validateNumber(line);
 
-                        System.out.println("Введите возраст");
-                        int age = validationNumber.validateNumber(line);
+                            System.out.println("Введите вес");
+                            int weight = validationNumber.validateNumber(line);
 
-                        System.out.println("Введите вес");
-                        int weight = validationNumber.validateNumber(line);
+                            System.out.println("Введите цвет");
+                            String color = validationLine.validateLine(line);
 
-                        System.out.println("Введите цвет");
-                        String color = validationLine.validateLine(line);
-
-                        Animal animal = new FabrikaForAnimals(name, age, weight, color).createAnimal(ChooseTypeAnimals.valueOf(typeAnimal));
-                        animals.add(animal);
-                        System.out.println(animal.say());
-                        break;
+                            Animal animal = new FabrikaForAnimals(name, age, weight, color).createAnimal(ChooseTypeAnimals.valueOf(typeAnimal));
+                            animals.add(animal);
+                            System.out.println(animal.say());
+                            break;
+                        }
                     }
 
                 case LIST:
