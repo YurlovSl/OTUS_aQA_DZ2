@@ -4,6 +4,7 @@ import data.ChooseTypeAnimals;
 import fabrika.FabrikaForAnimals;
 import utils.ValidationLine;
 import utils.ValidationNumber;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -12,7 +13,6 @@ public class Main {
 
         ArrayList<Animal> animals = new ArrayList<>();
         ChooseActions chooseActions;
-        ChooseTypeAnimals chooseTypeAnimals;
         ValidationNumber validationNumber = new ValidationNumber();
         ValidationLine validationLine = new ValidationLine();
 
@@ -36,11 +36,10 @@ public class Main {
                     for (ChooseTypeAnimals chooseTypeAnimals1 : ChooseTypeAnimals.values()) {
                         animalsForEnum.add(chooseTypeAnimals1.name().toUpperCase());
                     }
-                    boolean type = false;
-                    while (!type) {
+                    while (true) {
                         System.out.println("Введите название животного: " + String.join("/", animalsForEnum));          // Вывод животных через Enum
                         String typeAnimal = scanner.nextLine().toUpperCase().trim();
-                        
+
                         if (!animalsForEnum.contains(typeAnimal)) {                                                             // Сравнение строки с элементами массива, полученных из Enum
                             System.out.println("Такого животного нет, повторите попытку еще раз");
                         } else {
@@ -62,6 +61,7 @@ public class Main {
                             break;
                         }
                     }
+                    break;
 
                 case LIST:
                     if (animals.size() == 0) {
